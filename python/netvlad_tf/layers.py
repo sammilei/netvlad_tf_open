@@ -37,5 +37,5 @@ def netVLAD(inputs, num_clusters, assign_weight_initializer=None,
     return v
 
 def matconvnetNormalize(inputs, epsilon):
-    return inputs / tf.sqrt(tensorflow.python.ops.math_ops(inputs ** 2, axis=-1, keep_dims=True)
+    return inputs / tf.sqrt(tf.reduce_sum(inputs ** 2, axis=-1, keep_dims=True)
                             + epsilon)
