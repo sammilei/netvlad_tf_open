@@ -16,7 +16,9 @@ saver = tf.train.Saver()
 sess = tf.Session()
 saver.restore(sess, nets.defaultCheckpoint())
 
-inim = cv2.imread(nfm.exampleImgPath())
+imgPath = nfm.exampleImgPath()
+print(imgPath)
+inim = cv2.imread(imgPath)
 inim = cv2.cvtColor(inim, cv2.COLOR_BGR2RGB)
 
 batch = np.expand_dims(inim, axis=0)
